@@ -129,14 +129,19 @@ def resnet50(pretrained=False, **kwargs):
     return model
 
 if __name__ == '__main__':
-    from torchvision import models
+    import torch
     from torchsummary import summary
-#     net = resnet50()
-#     summary(net,(3,224,224))
-#     print(net)
+    import torch.nn as nn
+    from torchviz import make_dot
+    
+#print the layers of resnet50
     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-#     resnet50=models.resnet50().to(device)
     model=resnet50().to(device)
     summary(model,(1,224,224))
-    net = resnet50()
-    print(net)
+    print(model)
+
+#print the architecture of resnet50
+    x = torch.randn(1,1,224,224).requires_grad_(True)
+    y = model(x.to(device))
+    vis_graph = make_dot(y,params=dict(list(model.named_parameters()) + [('x', x)] ))
+    vis_graph.view()
