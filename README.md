@@ -41,9 +41,10 @@ The data are processed in by instructions in https://github.com/zalandoresearch/
 * Note: In this repo, the training set is divided into two parts: one is for training with size 50,000 and the other is for evaluating with size 10,000. The processed evaluating dataset is located in '/data/processed/val' with the name 'test.pth', while the testing dataset is located in '/data/processed/test' with the name 'test.pth'.
  
 ## Training
-```
-- To train drn_a_50 Net using the train script simply specify the parameters listed in `train_drn.py` as a flag or manually change them. To train resnet50 is in the same way except using the 'train-resnet50.py' script.
-```Shell
+
+- To train drn_a_50 Net using the train script simply specify the parameters listed in `train_drn.py` as a flag or manually change them.  To train resnet50 is in the same way except using the 'train-resnet50.py' script.
+
+```shell
 python train-drn.py 
 ```
    - Note:
