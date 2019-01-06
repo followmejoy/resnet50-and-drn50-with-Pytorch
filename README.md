@@ -39,8 +39,8 @@ The dataset is downloaded from the links below, which is stored in the same form
 The data are processed in by instructions in https://github.com/zalandoresearch/fashion-mnist, and the processed dataset in this repo is located in './data/processed'.
 
 - Note: 
-* In this repo, the training set is divided into two parts: one is for training with size 50,000 and the other is for evaluating with size 10,000. 
-* The processed evaluating dataset is located in '/data/processed/val' with the name 'test.pth', while the testing dataset is located in '/data/processed/test' with the name 'test.pth'.
+     * In this repo, the training set is divided into two parts: one is for training with size 50,000 and the other is for evaluating with size 10,000. 
+     * The processed evaluating dataset is located in '/data/processed/val' with the name 'test.pth', while the testing dataset is located in '/data/processed/test' with the name 'test.pth'.
  
 ## Training
 
