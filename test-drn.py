@@ -35,7 +35,6 @@ import drn
 parser = argparse.ArgumentParser()
 parser.add_argument("--model", type=str, default='drn_a_50', help="model")
 parser.add_argument("--data", type=str, default='FashionMNIST', help="MNIST, or FashionMNIST")
-parser.add_argument("--seed", type=int, default=1, help="random seed")
 parser.add_argument("--batch_size", type=int, default=4, help="batch size")
 parser.add_argument('--print-freq', '-p', default=10, type=int,metavar='N', help='print frequency (default: 10)')
 parser.add_argument('--resume', default=True, type=bool, help='resume from a checkpoint,default：latest checkpoint ')
