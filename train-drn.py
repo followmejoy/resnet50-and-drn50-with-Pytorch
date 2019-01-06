@@ -42,15 +42,11 @@ parser.add_argument('--print-freq', '-p', default=10, type=int,metavar='N', help
 parser.add_argument('--check-freq', default=10, type=int,metavar='N', help='checkpoint frequency (default: 10)')
 parser.add_argument('--resume', default=True, type=bool, help='resume from a checkpoint')
 parser.add_argument("--save_folder", type=str, default='saved-weights', help="folder to save the trained models")
-#parser.add_argument('--arch', '-a', metavar='ARCH', default='drn50',choices=model_names,help='model architecture: ' 
-#                    + '|'.join(model_names) +' (default: drn50)')
 
 args = parser.parse_args()
 
 # Set up the device
-#device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-#print('Training on {}'.format(device))
-device = 'cuda:0'
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # Set seeds. If using numpy this must be seeded too.
 torch.manual_seed(args.seed)
@@ -187,20 +183,16 @@ def train(args, train_loader, model, criterion, optimizer, epoch):
     writer.writerow(['Epoch', 'Time', 'Data', 'Loss', 'prec@1', 'prec@5'])
     
     end = time.time()
-    for i, (input, target) in enumerate(train_loader):
+    for i, (input_var, target) in enumerate(train_loader):
         # measure data loading time
         data_time.update(time.time() - end)
 
-#        target = target.cuda(async=True)
-#        input_var = torch.autograd.Variable(input)
-#        target_var = torch.autograd.Variable(target)
-
         m=torch.nn.Upsample(scale_factor=8, mode='nearest')
-        input=m(input)
-        input, target = input.to(device), target.to(device)
+        input_var=m(input_var)
+        input_var, target = input_var.to(device), target.to(device)
         
         # compute output
-        output = model(input)
+        output = model(input_var)
         loss = criterion(output, target)
 
         # measure accuracy and record loss
@@ -245,18 +237,13 @@ def validate(args, val_loader, model, criterion):
     model.eval()
 
     end = time.time()
-    for i, (input, target) in enumerate(val_loader):
-#        target = target.cuda(async=True)
-#        input_var = torch.autograd.Variable(input, volatile=True)
-#        target_var = torch.autograd.Variable(target, volatile=True)
-        
+    for i, (input_var, target) in enumerate(val_loader):        
         m=torch.nn.Upsample(scale_factor=8, mode='nearest')
-        input=m(input)
-        input, target = input.to(device), target.to(device)
-        
+        input_var=m(input_var)
+        input_var, target = input_var.to(device), target.to(device)      
         
         # compute output
-        output = model(input)
+        output = model(input_var)
         loss = criterion(output, target)
 
         # measure accuracy and record loss
