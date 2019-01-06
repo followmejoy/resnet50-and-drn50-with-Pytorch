@@ -131,8 +131,24 @@ def drn_a_50(pretrained=False, **kwargs):
     if pretrained:
         model.load_state_dict(model_zoo.load_url(model_urls['resnet50']))
     return model
-if __name__ == '__main__':
 
-    # Init network, criterion and early stopping
-    net = drn_a_50()
-    print(net)
+if __name__ == '__main__':
+    
+    import torch
+    from torchsummary import summary
+    import torch.nn as nn
+    from torchviz import make_dot
+
+#print the layers of DRN
+
+    device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model=drn_a_50().to(device)
+    summary(model,(1,224,224))
+    print(model)
+
+#print the architecture of DRN
+    x = torch.randn(1,1,224,224).requires_grad_(True)
+    y = model(x.to(device))
+    vis_graph = make_dot(y,params=dict(list(model.named_parameters()) + [('x', x)] ))
+    vis_graph.view()
+    
