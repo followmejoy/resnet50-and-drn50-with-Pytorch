@@ -28,6 +28,7 @@
   
 ## Datasets
 You can use direct links to download the dataset. The data is stored in the same format as the original MNIST data.
+
 | name                                   |  content |  examples | link |
 | :--------------------------------------- | :------: |:-------:| :-----------------------: |
 |train-images-idx3-ubyte.gz | training set images |60,000|http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz  | 
