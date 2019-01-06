@@ -22,7 +22,6 @@ import csv
 import mnist_reader
 from tqdm import tqdm
 from scipy import misc
-import tensorflow as tf
 
 import resnet50
 #import drn
@@ -44,8 +43,7 @@ parser.add_argument('--print-freq', '-p', default=10, type=int,metavar='N', help
 parser.add_argument('--check-freq', default=10, type=int,metavar='N', help='checkpoint frequency (default: 10)')
 parser.add_argument('--resume', default=False, type=bool, help='resume from a checkpoint')
 parser.add_argument("--save_folder", type=str, default='saved-weights', help="folder to save the trained models")
-#parser.add_argument('--arch', '-a', metavar='ARCH', default='drn50',choices=model_names,help='model architecture: ' 
-#                    + '|'.join(model_names) +' (default: drn50)')
+
 
 args = parser.parse_args()
 
