@@ -46,13 +46,13 @@ The data are processed in by instructions in https://github.com/zalandoresearch/
 ```Shell
 python train-drn.py 
 ```
-   * Note:
-        --patience      # early stopping
-        --batch_size    # batch size
-        --nepochs       # max epochs
-        --nworkers      # number of workers
-        --seed          # random seed
-        --data          #FashionMNIST or MNIST
+   - Note:
+       * --patience      # early stopping
+       * --batch_size    # batch size
+       * --nepochs       # max epochs
+       * --nworkers      # number of workers
+       * --seed          # random seed
+       * --data          #FashionMNIST or MNIST
           
 ## Evaluation
 - You can test the drn_a_50 Net with the code below, and to test resnet50 is as the same except using 'test-resnet50.py'.  
@@ -60,8 +60,8 @@ python train-drn.py
 ```Shell
 python test-drn.py 
 ```
-  * Note:
-        --data          #FashionMNIST or MNIST
-        --batch_size    #Batch size
-        -p              #print frequency (default: 10)
+  - Note:
+       * --data          #FashionMNIST or MNIST
+       * --batch_size    #Batch size
+       * -p              #print frequency (default: 10)
         
