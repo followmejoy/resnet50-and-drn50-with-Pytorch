@@ -36,9 +36,9 @@ The dataset is downloaded from the links below, which is stored in the same form
 |t10k-images-idx3-ubyte.gz | testing set images |10,000|http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz |
 |t10k-labels-idx3-ubyte.gz | testing set labels |10,000|http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz |
 
-The data are processed in by instructions in https://github.com/zalandoresearch/fashion-mnist, and the processed dataset in this repo is located in ./data/processed.
+The data are processed in by instructions in https://github.com/zalandoresearch/fashion-mnist, and the processed dataset in this repo is located in './data/processed'.
 
-* Note: In this repo, the training set is divided into two parts: one is for training with size 50,000 and the other is for evaluating with size 10,000. The processed evaluating dataset is located in /data/processed/val with the name 'test.pth', while the testing dataset is located in /data/processed/test with the name 'test.pth'.
+* Note: In this repo, the training set is divided into two parts: one is for training with size 50,000 and the other is for evaluating with size 10,000. The processed evaluating dataset is located in '/data/processed/val' with the name 'test.pth', while the testing dataset is located in '/data/processed/test' with the name 'test.pth'.
  
 ## Training
 ```
