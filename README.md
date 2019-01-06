@@ -1,4 +1,4 @@
-# Resnet50 and drn_a_50 wiht MNIST fashion
+# Resnet50 and drn_a_50 wiht fashion MNIST 
 
 ## Pytorch 4.1 is suppoted on branch 0.4 now.
 ## Support Arc:
