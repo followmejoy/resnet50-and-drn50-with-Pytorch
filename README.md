@@ -8,7 +8,7 @@
 * Resnet50 [https://download.pytorch.org/models/resnet50-19c8e357.pth]
 * Drn_a_50 [https://github.com/fyu/drn]
 
-### VOC2007 Test
+### Fashion MNIST Test
 | System                                   |  *top1*  |  *top5* | **FPS** (GeoForce 1080) |
 | :--------------------------------------- | :------: |:-------:| :-----------------------: |
 | Resnet50                                 |   92.48   | 99.94  |     **150 (1080Ti)**      |
@@ -27,7 +27,7 @@
   * Note: We currently only support Python 3+. 
   
 ## Datasets
-You can use direct links to download the dataset. The data is stored in the same format as the original MNIST data.
+The dataset is downloaded from the links below, which is stored in the same format as the original MNIST data.
 
 | name                                   |  content |  examples | link |
 | :--------------------------------------- | :------: |:-------:| :-----------------------: |
@@ -36,22 +36,32 @@ You can use direct links to download the dataset. The data is stored in the same
 |t10k-images-idx3-ubyte.gz | testing set images |10,000|http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz |
 |t10k-labels-idx3-ubyte.gz | testing set labels |10,000|http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz |
 
-### Training
-```
-python train-model.name.py 
+The data are processed in by instructions in https://github.com/zalandoresearch/fashion-mnist, and the processed dataset in this repo is located in ./data/processed.
 
-        model.name      # specify model, (resnet50, drn_a_50)
+* Note: In this repo, the training set is divided into two parts: one is for training with size 50,000 and the other is for evaluating with size 10,000. The processed evaluating dataset is located in /data/processed/val with the name 'test.pth', while the testing dataset is located in /data/processed/test with the name 'test.pth'.
+ 
+## Training
+```
+- To train drn_a_50 Net using the train script simply specify the parameters listed in `train_drn.py` as a flag or manually change them. To train resnet50 is in the same way except using the 'train-resnet50.py' script.
+```Shell
+python train-drn.py 
+```
+   * Note:
         --patience      # early stopping
         --batch_size    # batch size
         --nepochs       # max epochs
         --nworkers      # number of workers
         --seed          # random seed
         --data          #FashionMNIST or MNIST
+          
+## Evaluation
+- You can test the drn_a_50 Net with the code below, and to test resnet50 is as the same except using 'test-resnet50.py'.  
+
+```Shell
+python test-drn.py 
 ```
-
-
-### Results
-|   | FashionSimpleNet | ResNest18 |
-| ------------- | ------------- |-----------|
-| MNIST  | 0.994  | 0.994|
-| FashionMNIST  | 0.923  | 0.920|
+  * Note:
+        --data          #FashionMNIST or MNIST
+        --batch_size    #Batch size
+        -p              #print frequency (default: 10)
+        
