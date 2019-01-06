@@ -38,7 +38,9 @@ The dataset is downloaded from the links below, which is stored in the same form
 
 The data are processed in by instructions in https://github.com/zalandoresearch/fashion-mnist, and the processed dataset in this repo is located in './data/processed'.
 
-* Note: In this repo, the training set is divided into two parts: one is for training with size 50,000 and the other is for evaluating with size 10,000. The processed evaluating dataset is located in '/data/processed/val' with the name 'test.pth', while the testing dataset is located in '/data/processed/test' with the name 'test.pth'.
+- Note: 
+* In this repo, the training set is divided into two parts: one is for training with size 50,000 and the other is for evaluating with size 10,000. 
+* The processed evaluating dataset is located in '/data/processed/val' with the name 'test.pth', while the testing dataset is located in '/data/processed/test' with the name 'test.pth'.
  
 ## Training
 
@@ -48,12 +50,12 @@ The data are processed in by instructions in https://github.com/zalandoresearch/
 python train-drn.py 
 ```
    - Note:
-       * --patience      # early stopping
-       * --batch_size    # batch size
-       * --nepochs       # max epochs
-       * --nworkers      # number of workers
-       * --seed          # random seed
-       * --data          #FashionMNIST or MNIST
+       * --patience :early stopping
+       * --batch_size : batch size
+       * --nepochs: max epochs
+       * --nworkers:  number of workers
+       * --seed : random seed
+       * --data  : FashionMNIST or MNIST
           
 ## Evaluation
 - You can test the drn_a_50 Net with the code below, and to test resnet50 is as the same except using 'test-resnet50.py'.  
@@ -62,7 +64,7 @@ python train-drn.py
 python test-drn.py 
 ```
   - Note:
-       * --data          #FashionMNIST or MNIST
-       * --batch_size    #Batch size
-       * -p              #print frequency (default: 10)
+       * --data: FashionMNIST or MNIST
+       * --batch_size : #Batch size
+       * -p  : print frequency (default: 10)
         
