@@ -19,7 +19,6 @@ import torchvision.datasets as datasets
 import utils
 import argparse
 import csv
-import mnist_reader
 from tqdm import tqdm
 from scipy import misc
 
