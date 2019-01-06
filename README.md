@@ -11,8 +11,8 @@
 ### Fashion MNIST Test
 | System                                   |  *top1*  |  *top5* | **FPS** (GeoForce 1080) |
 | :--------------------------------------- | :------: |:-------:| :-----------------------: |
-| Resnet50                                 |   92.48   | 99.94  |     **150 (1080Ti)**      |
-| Drn_a_50                                 |   78.8   |          |       120 (1080Ti)        |
+| Resnet50                                 |          |          |               |
+| Drn_a_50                                 |          |            |               |
 
 ### Contents
 1. [Installation](#installation)
