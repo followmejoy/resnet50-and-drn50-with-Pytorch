@@ -22,7 +22,6 @@ import csv
 import mnist_reader
 from tqdm import tqdm
 from scipy import misc
-import tensorflow as tf
 
 #import resnet50
 import drn
