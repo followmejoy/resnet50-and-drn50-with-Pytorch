@@ -9,10 +9,10 @@
 * Drn_a_50 [https://github.com/fyu/drn]
 
 ### Fashion MNIST Test
-| System                                   |  *top1*  |  *top5* | **FPS** (Tesla K40c) |
+| System                                   |  *top1*  |  *top5* | *Parameters*|
 | :--------------------------------------- | :------: |:-------:| :-----------------------: |
-| Resnet50                                 |  92.79   | 99.71   |     58.8   |
-| Drn_a_50                                 |  93.83   | 99.93   |   25       |
+| Resnet50                                 |  92.79   | 99.71   |     25.6M   |
+| Drn_a_50                                 |  93.83   | 99.93   |   23.5M       |
 
 ### Contents
 1. [Installation](#installation)
