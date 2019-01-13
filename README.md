@@ -9,10 +9,10 @@
 * Drn_a_50 [https://github.com/fyu/drn]
 
 ### Fashion MNIST Test
-| System                                   |  *top1*  |  *top5* | **FPS** (GeoForce 1080) |
+| System                                   |  *top1*  |  *top5* | **FPS** (Tesla K40c) |
 | :--------------------------------------- | :------: |:-------:| :-----------------------: |
-| Resnet50                                 |          |          |               |
-| Drn_a_50                                 |          |            |               |
+| Resnet50                                 |  92.79   | 99.71   |     58.8   |
+| Drn_a_50                                 |  93.83   | 99.93   |   25       |
 
 ### Contents
 1. [Installation](#installation)
@@ -24,7 +24,7 @@
 ## Installation
 - Install [PyTorch-0.4.1](http://pytorch.org/) by selecting your environment on the website and running the appropriate command.
 - Clone this repository. This repository is mainly based on [drn](https://github.com/fyu/drn) and [fashion-mnist](https://github.com/zalandoresearch/fashion-mnist), a huge thank to them.
-  * Note: We currently only support Python 3+. 
+  * Note: Currently only support Python 3+. 
   
 ## Datasets
 The Fashion MNIST dataset is downloaded from the links below, which is stored in the same format as the original MNIST data.
@@ -40,7 +40,7 @@ The Fashion MNIST dataset is downloaded from the links below, which is stored in
 - Note: 
      * The Fashion MNIST data are processed by instructions in https://github.com/zalandoresearch/fashion-mnist, and the processed dataset in this repo is located in './data/processed'.
      * In this repo, the training set is divided into two parts: one is for training with size 50,000 and the other is for evaluating with size 10,000. 
-     * The processed evaluating dataset is located in './data/processed/val' with the name 'test.pth', while the testing dataset is located in './data/processed/test' with the name 'test.pth'. Before you train or test the net, you should move the according 'test.pth' to './data/processed'.
+     * The processed evaluating dataset is located in './data/processed/val-set' with the name 'test.pth', while the testing dataset is located in './data/processed/test-set' with the name 'test.pth'. Before you train or test the net, you should move the according 'test.pth' to './data/processed'.
      * MNIST data is also supported in this repo, and the data can be downloaded and processed automatically if you set --data MNIST in train script.
  
 ## Training
