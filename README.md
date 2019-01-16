@@ -66,6 +66,6 @@ python test-drn.py
 ```
   - Note:
        * --data: FashionMNIST or MNIST
-       * --batch_size : #Batch size
+       * --batch_size : Batch size
        * -p  : print frequency (default: 10)
         
